@@ -4,11 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'index/index.css' %}?v=3">
+    <link rel="stylesheet" href="{% static 'index/index.css' %}?v=4">
     <script src="{% static 'index/index.js' %}?v=3"></script>
     <title>Document</title>
 </head>
 <body>
-  
+    <header class="header">
+        <div class="container">
+            <div class="header__menu">
+                <a class="header__logo">ChemicalBioProfi</a>
+                <img class="logo" src="{% static 'index/logo3.png' %}" alt="logo">
+                <ul class="name__menu">
+                    <li class="name__object">Обо мне</li>
+                    <li class="name__object">Часто задаваемые вопросы</li>
+                    <li class="name__object">Результаты учеников</li>
+                    <li class="name__object"><button class="name__button"><a>Пробный урок</a></button></li>
+                </ul>
+            </div>
+        </div>   
+    </header>
 </body>
 </html>
