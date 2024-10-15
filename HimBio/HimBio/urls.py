@@ -17,8 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from appHim import views
+from appHim.views import LessonView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
+    path('about/', views.about, name="about"),
+    path('faq/', views.faq, name="faq"),
+    path('results/', views.results, name="results"),
+    path('lesson/', LessonView.as_view(), name='lesson'),
+
 ]
