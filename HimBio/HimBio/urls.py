@@ -26,5 +26,6 @@ urlpatterns = [
     path('faq/', views.faq, name="faq"),
     path('results/', views.results, name="results"),
     path('lesson/', LessonView.as_view(), name='lesson'),
-
+    path('record/', views.record_create, name='record_create'),
+    path('', views.home, name='home'),
 ]
