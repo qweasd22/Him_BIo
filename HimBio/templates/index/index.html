@@ -3,12 +3,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wdth,wght@0,93.3,100..900;1,93.3,100..900&display=swap');
+        </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'index/index.css' %}?v=3">
-    <script src="{% static 'index/index.js' %}?v=3"></script>
+    <link rel="stylesheet" href="{% static 'index/index.css' %}?v=6">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css?v=6">
+    
     <title>Document</title>
 </head>
 <body>
-  
+    <header class="hero is-dark is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <div class="navbar-brand ">
+                    <a class="navbar-item" href="#">
+                        <img class="image is-128x128" src="{% static 'index/logo.png' %}" alt="Logo">
+                    </a>
+                    <h3 class="is-size-3 has-text-white has-text-centered
+                    is-family-custom navbar-item has-dropdown my-4  ">ChemicalBioProfi</h3>
+                    <ul class="navbar-end">
+                        <li class="navbar-item">
+                            <a class="navbar-item" href="{% url 'about' %}">
+                                Обо мне
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="navbar-item" href="{% url 'faq' %}">
+                                Часто задаваемые вопросы
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="navbar-item" href="{% url 'results' %}">
+                                Результаты учеников
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <button class="button is-dark" id="goToLessonButton">Пробный урок</button>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- <script>
+    document.getElementById('goToLessonButton').addEventListener('click', function() {
+    window.location.href = '/lesson/';
+});
+</script> -->
+<script src="{% static 'index/index.js' %}"></script>
 </body>
 </html>
