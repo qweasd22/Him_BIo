@@ -7,10 +7,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wdth,wght@0,93.3,100..900;1,93.3,100..900&display=swap');
         </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'index/index.css' %}?v=6">
+    <link rel="stylesheet" href="{% static 'index/index.css' %}?v=8">
     <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css?v=6">
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css?v=8">
     
     <title>Document</title>
 </head>
@@ -40,9 +40,9 @@
                                 Результаты учеников
                             </a>
                         </li>
-                        <li class="navbar-item">
+                        <!-- <li class="navbar-item">
                             <button class="button is-dark" id="goToLessonButton">Пробный урок</button>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </div>
@@ -50,11 +50,27 @@
         </div>
     </header>
 
-<!-- <script>
-    document.getElementById('goToLessonButton').addEventListener('click', function() {
-    window.location.href = '/lesson/';
-});
-</script> -->
+<div class="container my-5 hero is-dark is-bold">
+    <div class="columns is-flex-direction-row my-6 ">
+        <div class="p-2 is-size-2 " ><p>Подготовка к ЕГЭ/ОГЭ по химии, биологии для любого уровня учеников. Для учеников 5-11 классов</p></div>
+        <div class="p-2 order-1 "><h4>★ 4,9</h4>
+            <p>рейтинг пробного урока на основании 500 отзывов учеников.</p>
+        </div>
+        <div class="p-2"><h4>Портфолио</h4>
+            <p>проекты, лекции, приближенные к реальному пробному уроку</p>
+        </div>
+        <div class="p-2">
+            <div class="form">
+                <form class="form" action="{% url 'record_create' %}" method="post">
+                    {% csrf_token %}
+                    <label class="label" for="message">Для записи на пробный урок напишите свою электронную почту</label>
+                    <textarea class="textarea" id="message" name="message" rows="2" cols="10%"></textarea><br />
+                    <input class="button is-dark" type="submit" value="Отправить">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="{% static 'index/index.js' %}"></script>
 </body>
 </html>
