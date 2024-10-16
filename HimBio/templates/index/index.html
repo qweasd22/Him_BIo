@@ -7,10 +7,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wdth,wght@0,93.3,100..900;1,93.3,100..900&display=swap');
         </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'index/index.css' %}?v=8">
+    <link rel="stylesheet" href="{% static 'index/index.css' %}?v=10">
     <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css?v=8">
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css?v=10">
     
     <title>Document</title>
 </head>
@@ -18,12 +18,12 @@
     <header class="hero is-dark is-bold">
         <div class="hero-body">
             <div class="container">
-                <div class="navbar-brand ">
+                <div class="navbar-brand container">
                     <a class="navbar-item" href="#">
                         <img class="image is-128x128" src="{% static 'index/logo.png' %}" alt="Logo">
                     </a>
                     <h3 class="is-size-3 has-text-white has-text-centered
-                    is-family-custom navbar-item has-dropdown my-4  ">ChemicalBioProfi</h3>
+                    is-family-custom navbar-item has-dropdown my-4">ChemicalBioProfi</h3>
                     <ul class="navbar-end">
                         <li class="navbar-item">
                             <a class="navbar-item" href="{% url 'about' %}">
@@ -50,27 +50,100 @@
         </div>
     </header>
 
-<div class="container my-5 hero is-dark is-bold">
-    <div class="columns is-flex-direction-row my-6 ">
-        <div class="p-2 is-size-2 " ><p>Подготовка к ЕГЭ/ОГЭ по химии, биологии для любого уровня учеников. Для учеников 5-11 классов</p></div>
-        <div class="p-2 order-1 "><h4>★ 4,9</h4>
+
+<div class="container hero is-dark is-bold my-5">
+    <section class="hero is-medium is-light my-7">
+        <div class="hero-body is-bordered">
+            <div class="container">
+                <h1 class="title">Подготовка к ЕГЭ/ОГЭ</h1>
+                <h2 class="subtitle">по химии, биологии для любого уровня учеников.</h2>
+                <p class="has-text-weight-light">Для учеников 5-11 классов</p>
+            </div>
+        </div>
+    </section>
+<div class="left-side my-8">
+    <section class="section my-5 my-8">
+        <div class="container">
+            <div class="columns">
+                <div class="column ">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="card-header-title">Портфолио</p>
+                            <p class="card-content">профили, проекты, публикации и реальному пробному уроку</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column f">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="card-header-title">★ 4,9</p>
+                            <p class="card-content">рейтинг пробного урока на основании 500 отзывов учеников.</p>
+                        </div>
+                    </div>
+                </div>
+                {% csrf_token %}
+                <form class=" hero-dark card my-1" method="post" action="{% url 'submit_form' %}"  >
+                    {% csrf_token %}
+                    <div class="field">
+                        <label class="label">Имя</label>
+                          <input class="input is-success"  type="name" name="name" placeholder="Text input" value="Имя">
+                      </div>
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <input class="input is-danger" name="email" type="email" placeholder="Email input" value="Email">
+                    </div>
+                    <div class="field">
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button onclick="Form()" class="button is-link">Отправить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+                        
+</div>
+</div>   
+    </section>
+    <script>
+        function Form(){
+            alert("Форма отправлена")
+        }
+    </script>
+</div> 
+<!-- <div class="container my-5 hero is-dark is-bold">
+    <div class="my-6 card-content columns">
+        <div class="p-2 card column is-size-3 is-7 "><p>Подготовка к ЕГЭ/ОГЭ по химии, биологии для любого уровня учеников. Для учеников 5-11 классов</p></div>
+        <div class="p-2 card column is-2 "><h4>★ 4,9</h4>
             <p>рейтинг пробного урока на основании 500 отзывов учеников.</p>
         </div>
-        <div class="p-2"><h4>Портфолио</h4>
+        <div class="p-2 card is-4"><h4>Портфолио</h4>
             <p>проекты, лекции, приближенные к реальному пробному уроку</p>
         </div>
-        <div class="p-2">
-            <div class="form">
-                <form class="form" action="{% url 'record_create' %}" method="post">
+        <div class="p-2 card ">
+            <div class="form ">
+                <form class="form "  method="post">
                     {% csrf_token %}
-                    <label class="label" for="message">Для записи на пробный урок напишите свою электронную почту</label>
-                    <textarea class="textarea" id="message" name="message" rows="2" cols="10%"></textarea><br />
-                    <input class="button is-dark" type="submit" value="Отправить">
+                    <div class="field">
+                        <label class="label">Имя</label>
+                          <input class="input is-success" type="text" placeholder="Text input" value="Имя">
+                      </div>
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <input class="input is-danger" type="email" placeholder="Email input" value="Email">
+                    </div>
+                    <div class="field">
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-link">Отправить</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <script src="{% static 'index/index.js' %}"></script>
 </body>
 </html>
