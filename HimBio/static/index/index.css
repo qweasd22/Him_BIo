@@ -6,18 +6,43 @@
    
 
 }
+.my-1{
+    padding: 1%;
+}
 .my-4 {
     margin-top: 2.7rem !important; /* or any other value */
 }
 .my-5 {
     margin-top: 2.7rem !important; /* or any other value */
+    margin-bottom: 2.7rem !important;
     margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 20px;
     margin-left: 20px;
     
 }
+.my-7{
+    margin-top: 2.7rem !important; /* or any other value */
+    margin-bottom: 2.7rem !important;
+    border: 1px solid #000;
+    border-radius: 41px;
+}
 .my-6{
     margin-right: 3% !important;
     margin-left: 3% !important;
+    display: flexbox !important;
+    justify-content: space-between !important;
+
+}
+.inner-column {
+    position: relative;
+    top: 50px; /* Задайте значение расстояния, на которое нужно опустить колонку */
+}
+
+.my-8{
+    flex:1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+
 }

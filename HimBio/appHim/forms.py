@@ -1,8 +1,7 @@
 from django import forms
+from .models import UserFormData
 
-from .models import Record
-
-class RecordForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
     class Meta:
-        model = Record
-        fields = ['message']
+        model = UserFormData
+        fields = ['name', 'email']
